@@ -1,0 +1,50 @@
+Port 22
+ListenAddress 0.0.0.0
+
+# Admin root access (key or password)
+PermitRootLogin yes
+
+# Auth settings
+PasswordAuthentication yes
+ChallengeResponseAuthentication no
+UsePAM no
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+
+# Allow both root (admin) and CTF user
+AllowUsers root khasem_7th_scribe
+
+# Disable X11 forwarding
+X11Forwarding no
+
+# Disable SFTP entirely — no file uploads via SSH
+# Subsystem sftp /usr/lib/openssh/sftp-server
+
+# Disable SCP/SFTP subsystem to prevent file transfer
+Subsystem sftp /bin/false
+
+# Allow TCP forwarding (needed for pivoting via SSH -L or Metasploit)
+AllowTcpForwarding yes
+AllowStreamLocalForwarding no
+GatewayPorts no
+PermitTunnel no
+
+# Brute-force protection
+MaxAuthTries 3
+LoginGraceTime 20
+MaxStartups 2:30:4
+MaxSessions 2
+ClientAliveInterval 300
+ClientAliveCountMax 1
+
+# Info
+PrintMotd yes
+PrintLastLog yes
+AcceptEnv LANG LC_*
+
+# Restrict CTF user specifically
+Match User khasem_7th_scribe
+    PasswordAuthentication no
+    PermitTunnel no
+    X11Forwarding no
+    ForceCommand /bin/bash

@@ -1,0 +1,31 @@
+# NECROSAND: THE ANUBIS PROTOCOL
+## Development History, Fixes, and Anti-AI Hardening Summary (Conversations 0 to 100)
+
+This document summarizes the entire development arc of the Anubis Protocol CTF machine, highlighting the bugs fixed, design upgrades, and specific measures taken to block automated AI solvers.
+
+### 1. Stability Fixes & Bug Squashing
+*   **Container Restart Loop Killed**: Container B (Sanctum) was stuck in a restart loop due to Docker permission conflicts. Fixed by removing `privileged: true` from `docker-compose.yml` and stripping the ASLR bypass command (`echo 0 > /proc/sys/kernel/randomize_va_space`) from `start.sh` since memory corruption was removed.
+*   **Service.py SyntaxError Crash Fix**: Fixed a fatal Python error where an invalid raw unicode escape `\u{1330C0}` was causing the web server to immediately crash. Replaced it with the raw `𓂀` character.
+*   **OVA Build Pipeline Overhaul (OOM Errors)**: Exporting the `.ova` file kept failing with `VERR_NO_MEMORY` because the host machine only had 8GB of RAM. The `BUILD_OVA.ps1` script was carefully tuned to aggressively clear runaway Docker processes (`taskkill` and `Stop-Process`) and size the VM down appropriately so the VirtualBox export could complete successfully. Resulting OVA size: ~1024 MB.
+
+### 2. CTF Realism & Hardening Updates
+*   **Replaced Buffer Overflow**: The `anubis.c` daemon originally used the vulnerable `gets()` function. This was replaced with `fgets()` to eliminate standard buffer overflow exploits. The challenge pivoted from binary exploitation to reconnaissance and lore-based puzzle-solving.
+*   **Hidden File Nesting**: To encourage deep enumeration, the secret testament was moved from a basic home folder drop into a nested hidden directory (`/home/khasem_7th_scribe/.tomb_of_khasem/.testament`).
+*   **Exploit Template Modernization**: `exploit_template.py` was updated to remove hardcoded solutions. The `PORT=9999` and `TARGET="..."` lines were left blank, forcing the player to manually enumerate to find the right strings and ports.
+
+### 3. Anti-AI / CLI Agent Mitigations (V2 Changes)
+To stop text-only CLI agents (like Codex or AutoGPT) from instantly solving the CTF via `curl`, `sqlmap`, and `nc`, the following "Human Logic" changes were implemented:
+*   **Image-Based Secrets (The Vision Gap)**: The final Secret Name was split in half to block `cat /home/user/...` solvers.
+    *   *Part 1* (`Kh4s3m_Th3_3t3rn4l`) is kept in `.testament`.
+    *   *Part 2* (`_Gu4rd14n_0f_Th3_D34d`) was hidden inside `sanctum_wall.png` as low-opacity text carved into an Egyptian wall. AI without web-vision cannot extract this string, forcing human interaction.
+*   **Two-Step Service Authentication**: Port 9999 was upgraded from a 1-step interaction to a 2-step process.
+    *   *Step 1*: Provide the Secret Name.
+    *   *Step 2*: If correct, the system asks the user to "Prove your office" (Answer: `scribe`).
+    *   *Impact*: This completely breaks simple `echo secret | nc <ip> 9999` scripts, demanding an interactive shell or a more complex Python script.
+*   **Natural Network Discovery**:
+    *   A static `/etc/hosts` entry was injected (`172.19.0.13 sanctum`).
+    *   The SSH login banner (`banner.sh`) was updated to explicitly hint at the new subnet: *"The Inner Sanctum lies sealed on a hidden network. Check the host records."*
+    *   This rewards standard CTF network charting without needing to brute force internal IPs.
+
+### 4. Final Result
+The CTF was successfully transformed from a scriptable, standard enumeration dump box into a multi-layered, interactive experience that specifically punishes automated tooling while remaining fair and engaging (1-3 hours solve time) for a human player.

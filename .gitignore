@@ -1,0 +1,14 @@
+# Large binary files
+*.ova
+*.tar
+*.zip
+
+# Build artifacts
+ova-build/
+vm-appliance/
+__pycache__/
+*.pyc
+
+# System files
+.DS_Store
+Thumbs.db

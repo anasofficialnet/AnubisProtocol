@@ -1,0 +1,52 @@
+version: '3.8'
+
+networks:
+  external_net:
+    driver: bridge
+  internal_sanctum:
+    driver: bridge
+    internal: true
+    ipam:
+      config:
+        - subnet: 172.19.0.0/24
+
+services:
+  # ═══════════════════════════════════════════
+  # CONTAINER A — Web/SSH/FTP Gateway
+  # The external-facing attack surface
+  # ═══════════════════════════════════════════
+  gateway:
+    build:
+      context: ./container-a
+      dockerfile: Dockerfile
+    container_name: anubis_gateway
+    hostname: anubis-gateway
+    ports:
+      - "21:21"
+      - "22:22"
+      - "80:80"
+      - "20:20"
+      - "40000-40100:40000-40100"
+    networks:
+      external_net:
+      internal_sanctum:
+        ipv4_address: 172.19.0.2
+    restart: unless-stopped
+    depends_on:
+      - sanctum
+
+  # ═══════════════════════════════════════════
+  # CONTAINER B — Internal Root Target
+  # Only reachable via network pivot
+  # ═══════════════════════════════════════════
+  sanctum:
+    build:
+      context: ./container-b
+      dockerfile: Dockerfile
+    container_name: anubis_sanctum
+    hostname: anubis-sanctum
+    networks:
+      internal_sanctum:
+        ipv4_address: 172.19.0.13
+    privileged: true
+    restart: unless-stopped
