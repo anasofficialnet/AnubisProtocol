@@ -1,172 +1,98 @@
 <div align="center">
 
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- ANIMATED HEADER -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
+<img src="https://capsule-render.vercel.app/api?type=waving&height=260&section=header&color=0:0d1117,45:b8860b,100:111827&text=The%20Anubis%20Protocol&fontColor=f8d66d&fontSize=46&fontAlignY=38&desc=Spoiler-safe%20cyber-archaeology%20CTF%20lab&descAlignY=58&descSize=18&animation=fadeIn" width="100%" alt="The Anubis Protocol animated header" />
 
-<img src="https://capsule-render.vercel.app/api?type=venom&color=0:0d1117,50:b8860b,100:0d1117&height=300&section=header&text=𓂀%20THE%20ANUBIS%20PROTOCOL%20𓂀&fontSize=42&fontColor=d4af37&animation=fadeIn&fontAlignY=45&desc=A%20Cyber-Archaeology%20CTF%20Challenge&descSize=18&descAlignY=65&descAlign=50&stroke=d4af37&strokeWidth=1" width="100%" />
-
-<br/>
-
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- TYPING ANIMATION -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
-
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Cinzel+Decorative&weight=700&size=22&duration=4000&pause=1000&color=D4AF37&center=true&vCenter=true&multiline=true&repeat=true&width=800&height=80&lines=%22Not+all+that+is+written+is+meant+to+be+read%2C;and+not+all+that+is+shown+is+meant+to+be+seen.%22" alt="Typing SVG" />
+<a href="https://github.com/anasofficialnet/AnubisProtocol">
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&duration=3600&pause=900&color=F8D66D&center=true&vCenter=true&width=760&lines=Explore+the+tomb.;Trust+your+method.;Earn+the+judgement." alt="Animated project tagline" />
 </a>
 
-<br/>
+<br />
 
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- BADGES -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
-
-<img src="https://img.shields.io/badge/🏛️_DIFFICULTY-HARD-cc0000?style=for-the-badge&labelColor=1a1a2e" />
-<img src="https://img.shields.io/badge/🏺_EVENT-NECROSAND-d4af37?style=for-the-badge&labelColor=1a1a2e" />
-<img src="https://img.shields.io/badge/⏱️_SOLVE_TIME-1--3_HOURS-4a0e4e?style=for-the-badge&labelColor=1a1a2e" />
-
-<br/><br/>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
+<img src="https://img.shields.io/badge/Category-CTF%20Lab-f8d66d?style=for-the-badge&labelColor=111827" alt="Category badge" />
+<img src="https://img.shields.io/badge/Difficulty-Hard-b91c1c?style=for-the-badge&labelColor=111827" alt="Difficulty badge" />
+<img src="https://img.shields.io/badge/Event-NecroSand-38bdf8?style=for-the-badge&labelColor=111827" alt="Event badge" />
+<img src="https://img.shields.io/badge/Release-OVA-22c55e?style=for-the-badge&labelColor=111827" alt="OVA badge" />
 
 </div>
 
-<br/>
+---
 
-## 𓁹 The Lore
+## Overview
 
-> *Deep beneath the digital sands lies the tomb of the **Seventh Scribe**, guarded by an ancient, automated defense mechanism known as **The Anubis Protocol**. A previous excavation team disappeared, leaving behind only scattered notes, locked archives, and a warning that the scales of judgment are unforgiving.*
-> 
-> *To breach the Inner Sanctum, you must embrace the mindset of a **cyber-archaeologist**. Read the lore, follow the breadcrumbs, and prove your conviction. The tomb demands human intuition, patience, and a sharp eye.*
+**The Anubis Protocol** is a deliberately vulnerable virtual machine built for CTF players, security students, and lab-based practitioners. It blends narrative discovery with practical exploitation, privilege escalation, and post-compromise analysis inside a controlled environment.
 
-<br/>
+This repository is intentionally **spoiler-safe**. It does not publish target addresses, challenge internals, solution paths, flags, credentials, or step-by-step player guidance. The machine is designed to reveal the information a player needs inside the lab at runtime.
 
-<div align="center">
+## Challenge Profile
 
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- CHALLENGE INFO TABLE -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
+| Property | Details |
+| --- | --- |
+| Format | VirtualBox appliance |
+| Category | Boot-to-root CTF |
+| Difficulty | Hard |
+| Theme | Cyber-archaeology |
+| Flag style | `necrosand{...}` |
+| Intended use | Legal, isolated, educational labs |
 
-<table>
-<tr><td align="center" width="150"><b>𓃭 Property</b></td><td align="center" width="350"><b>𓁿 Details</b></td></tr>
-<tr><td align="center"><code>Difficulty</code></td><td align="center">🔴 <b>Hard</b></td></tr>
-<tr><td align="center"><code>Target</code></td><td align="center">Root / System compromise</td></tr>
-<tr><td align="center"><code>Flag Format</code></td><td align="center"><code>necrosand{...}</code></td></tr>
-<tr><td align="center"><code>Event</code></td><td align="center"><b>NecroSand CTF</b></td></tr>
-</table>
+## Player Experience
 
-</div>
+The challenge starts with a quiet premise: an automated tomb defense known as **The Anubis Protocol** stands between the player and the Inner Sanctum. From there, the machine provides its own discovery surface and pacing.
 
-<br/>
+Players are expected to bring their own methodology, documentation habits, and controlled lab tooling. No public walkthrough hints are included here, keeping the challenge fair for events, classrooms, and independent practice.
 
-<div align="center">
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
-</div>
-
-<br/>
-
-## 🚀 Deployment
-
-This machine is packaged as a ready-to-play VirtualBox appliance. 
-
-**Step 1** — Import into VirtualBox:
-```
-File → Import Appliance → Select AnubisProtocol.ova → Import
-```
-
-**Step 2** — Configure Network:
-For the best experience, set your VirtualBox network adapter to **Bridged Adapter** (if playing on your local LAN) or **Host-Only Adapter** (for an isolated lab).
-
-**Step 3** — Boot the machine:
-Start the VM. Once it has booted, the machine's IP address will be displayed on the console screen.
-
-**Step 4** — Begin the excavation!
-Scan the target IP from your attacker machine and find a way in.
-
-<br/>
+## Release Package
 
 <div align="center">
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
-</div>
-
-<br/>
-
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- DOWNLOAD SECTION -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
-
-<div align="center">
-
-## 📥 Download
 
 <a href="https://www.mediafire.com/file/ra80t4n95t8cd83/AnubisProtocol.zip/file">
-  <img src="https://img.shields.io/badge/⬇️_DOWNLOAD_OVA-AnubisProtocol.zip-d4af37?style=for-the-badge&labelColor=1a1a2e&logo=files&logoColor=d4af37" />
+  <img src="https://img.shields.io/badge/Download-AnubisProtocol.zip-f8d66d?style=for-the-badge&labelColor=111827&logo=files&logoColor=f8d66d" alt="Download AnubisProtocol.zip" />
 </a>
 
-<br/><br/>
+<br /><br />
 
-<code>📦 AnubisProtocol.ova — ~1 GB</code>
+<code>AnubisProtocol.ova</code>
 
 </div>
 
-<br/>
+## Lab Safety
+
+Run the appliance only in an environment you own or are explicitly authorized to test. Use isolated lab networking when possible, avoid exposing the VM to public networks, and treat all challenge artifacts as educational material.
+
+The public documentation avoids sensitive operational details by design:
+
+- No static IP addresses
+- No credentials or flags
+- No exploit sequence
+- No enumeration checklist
+- No privilege escalation path
+
+## Author
 
 <div align="center">
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
-</div>
-
-<br/>
-
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- AUTHOR SECTION -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
-
-<div align="center">
-
-## 𓁢 Created By
 
 <a href="https://github.com/anasofficialnet">
-  <img src="https://img.shields.io/badge/GitHub-anasofficialnet-181717?style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://github-stats-alpha.vercel.app/api?username=anasofficialnet&cc=0d1117&tc=f8d66d&ic=38bdf8&bc=1f2937" width="520" alt="Anas Abdul Aziz GitHub stats" />
 </a>
 
-<br/><br/>
+<br /><br />
 
-### **Anas Abdul Aziz**
+**Anas Abdul Aziz**  
+Pentester | Tool Developer | Web Application Security
 
-`Pentester` · `Tool Developer` · `Web Application Security`
-
-<br/>
+<br />
 
 <a href="https://github.com/anasofficialnet">
-  <img src="https://github-stats-alpha.vercel.app/api?username=anasofficialnet&cc=0d1117&tc=d4af37&ic=d4af37&bc=1a1a2e" width="500" />
-</a>
-
-<br/><br/>
-
-<a href="https://github.com/anasofficialnet?tab=repositories">
-  <img src="https://img.shields.io/badge/🔗_More_Projects-anasofficialnet-58a6ff?style=flat-square&labelColor=0d1117" />
+  <img src="https://img.shields.io/badge/GitHub-anasofficialnet-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub profile" />
 </a>
 
 </div>
 
-<br/>
-
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- FOOTER -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
+---
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=venom&color=0:0d1117,50:b8860b,100:0d1117&height=150&section=footer&text=𓂀%20Anubis%20Has%20Judged%20You%20Worthy%20𓂀&fontSize=20&fontColor=d4af37&animation=fadeIn&fontAlignY=65" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=130&section=footer&color=0:111827,55:b8860b,100:0d1117&text=Judgement%20Awaits&fontColor=f8d66d&fontSize=24&animation=fadeIn" width="100%" alt="Animated footer" />
 
-<br/>
-
-```
-Built for educational CTF purposes only.
-Created for the NecroSand Event.
-```
-
-<sub>𓃭 <i>"The scales of Ma'at weigh the hearts of all who enter."</i> 𓃭</sub>
+<sub>Built for educational CTF use in authorized lab environments.</sub>
 
 </div>
